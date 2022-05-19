@@ -9,7 +9,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["OrderItem.csproj", "OrderItem/"]
 RUN dotnet restore "OrderItem/OrderItem.csproj"
-COPY . .
+COPY . OrderItem/
 WORKDIR "/src/OrderItem"
 RUN dotnet build "OrderItem.csproj" -c Release -o /app/build
 
